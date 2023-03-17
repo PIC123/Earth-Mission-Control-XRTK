@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.esri.arcgis-maps-sdk": "file:C:/Users/Phil/Downloads/arcgis-maps-sdk-unity-1.1.0.tgz",
     "com.microsoft.maps.unity": "0.11.2",
     "com.microsoft.maps.unity.urp": "https://github.com/microsoft/MapsSDK-Unity.git?path=/UPM/com.microsoft.maps.unity.urp",
     "com.normalvr.normcore": "2.4.1",
@@ -16,6 +17,7 @@
     "com.unity.timeline": "1.6.4",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.8.0",
+    "com.unity.xr.hands": "1.1.0-pre.3",
     "com.unity.xr.interaction.toolkit": "2.3.0",
     "com.unity.xr.management": "4.3.3",
     "com.unity.xr.oculus": "3.2.3",
