@@ -1,0 +1,53 @@
+{
+    "markers": [{
+        "longitude": -71,
+        "latitude": 42,
+        "title": "Boston",
+        "description": "Boston is the capital and most populous city of the Commonwealth of Massachusetts in the United States. The city proper covers 48.3 square miles (124.6 km2) with an estimated population of 685,094 in 2016, making it also the most populous city in New England. Boston is the seat of Suffolk County as well, although the county government was disbanded on July 1, 1999. The city is the economic and cultural anchor of a substantially larger metropolitan area known as Greater Boston, a metropolitan statistical area (MSA) home to a census-estimated 4.8 million people in 2016 and ranking as the tenth-largest such area in the country. The city also hosts several world-class universities, including Boston University, Boston College, Northeastern University, and Tufts University."
+    },{
+        "title": "Los Angeles",
+        "latitude": 34.0522,
+        "longitude": -118.2437,
+        "description": "LA is an interesting place"
+    },{
+        "title": "New York",
+        "latitude": 40.7128,
+        "longitude": -74.0059,
+        "description": "NY is an interesting place"
+    },{
+        "title": "San Francisco",
+        "latitude": 37.7749,
+        "longitude": -122.4194,
+        "description": "SF is an interesting place"
+    },{
+        "title": "Seattle",
+        "latitude": 47.6062,
+        "longitude": -122.3321,
+        "description": "Seattle is an interesting place"
+    },{
+        "title": "Washington DC",
+        "latitude": 38.9072,
+        "longitude": -77.0369,
+        "description": "DC is an interesting place"
+    },{
+        "title": "London",
+        "latitude": 51.5074,
+        "longitude": -0.1278,
+        "description": "London is an interesting place"
+    },{
+        "title": "Paris",
+        "latitude": 48.8566,
+        "longitude": 2.3522,
+        "description": "Paris is an interesting place"
+    },{
+        "title": "Tokyo",
+        "latitude": 35.6895,
+        "longitude": 139.6917,
+        "description": "Tokyo is an interesting place"
+    },{
+        "title": "Sydney",
+        "latitude": -33.8688,
+        "longitude": 151.2093,
+        "description": "Sydney is an interesting place"
+    }]
+}
