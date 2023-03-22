@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using Microsoft.Geospatial;
+using Microsoft.Maps.Unity;
 
 public class GlobeManager : MonoBehaviour
 {
@@ -23,6 +25,7 @@ public class GlobeManager : MonoBehaviour
 
     public GameObject markerPrefab;
     public string fileName;
+    public MapRenderer mapRenderer;
     private MarkerList markerList;
     private float radius;
 
@@ -41,7 +44,9 @@ public class GlobeManager : MonoBehaviour
             // Get correct orientation
             var correctedRot = AlignRotation(correctedPos);
             // Instantiate marker
-            Instantiate(markerPrefab, correctedPos, correctedRot, transform);
+            var mapMarker = Instantiate(markerPrefab, correctedPos, correctedRot, transform);
+            var mapPinManager = mapMarker.GetComponent<MapPinManager>();
+            mapPinManager.markerData = marker;
             Debug.Log(marker.title);
         }
     }

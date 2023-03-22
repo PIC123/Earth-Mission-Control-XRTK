@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826a5bba008091143a88abf01d3ad402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  markerPrefab: {fileID: 5613991255286601858, guid: 466eabed5caf39e4b95a5004310c28db,
+  markerPrefab: {fileID: 699591750883896130, guid: 6b728862840c40e40a1c6e81d1f8efca,
     type: 3}
   fileName: test-data
 --- !u!114 &2798651379299051399
