@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.Geospatial;
 using Microsoft.Maps.Unity;
+using UnityEngine.UI;
 
 public class MapManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class MapManager : MonoBehaviour
     public float translationSpeedOffset = 1;
     public float rotationSpeedOffset = 1;
     public float zoomSpeedOffset = 1;
+    public Text mapInfoText;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +29,7 @@ public class MapManager : MonoBehaviour
                 mapRenderer.Center.LongitudeInDegrees + controller.xdist * translationSpeedOffset
             );
         }
+
+        mapInfoText.text = $"Latitude: {mapRenderer.Center.LatitudeInDegrees} \n Longitude: {mapRenderer.Center.LongitudeInDegrees} \n Zoom Level: {mapRenderer.ZoomLevel}";
     }
 }
