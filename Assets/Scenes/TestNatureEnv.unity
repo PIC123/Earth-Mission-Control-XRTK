@@ -2738,7 +2738,7 @@ PrefabInstance:
     - target: {fileID: 4422659090696076826, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 262.1
       objectReference: {fileID: 0}
     - target: {fileID: 4422659090696076826, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -2748,7 +2748,7 @@ PrefabInstance:
     - target: {fileID: 4422659090696076826, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 147.05
       objectReference: {fileID: 0}
     - target: {fileID: 4422659090696076826, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -9588,6 +9588,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.77
       objectReference: {fileID: 0}
+    - target: {fileID: 4951362325804253829, guid: 79ed4f64d6303894db66d9cf2e05ed54,
+        type: 3}
+      propertyPath: m_TagString
+      value: MapTable
+      objectReference: {fileID: 0}
     - target: {fileID: 4951362326013310883, guid: 79ed4f64d6303894db66d9cf2e05ed54,
         type: 3}
       propertyPath: mapInfoText
@@ -15973,7 +15978,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -18979,6 +18984,7 @@ GameObject:
   - component: {fileID: 1400842447}
   - component: {fileID: 1400842446}
   - component: {fileID: 1400842445}
+  - component: {fileID: 1400842451}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -19008,7 +19014,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400842443}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d8a6459eb3010b4f9751de03dca135a, type: 3}
   m_Name: 
@@ -19016,7 +19022,7 @@ MonoBehaviour:
   _layerName: Pointss Of Interest
   _mapPins:
     _list: []
-  _isClusteringEnabled: 1
+  _isClusteringEnabled: 0
   _clusterThreshold: 5
   _clusterMapPinPrefab: {fileID: 0}
 --- !u!65 &1400842446
@@ -19129,6 +19135,24 @@ MonoBehaviour:
   _hideTileLayerComponents: 1
   _mapColliderType: 1
   _mapCollider: {fileID: 1453005234}
+--- !u!114 &1400842451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400842443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2db4f372083e4443975e2b1b826dc9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapPinLayer: {fileID: 1400842445}
+  mapPinPrefab: {fileID: -2787492765555843975, guid: 87a8442163079bd48a0918812c1ba685,
+    type: 3}
+  fileName: test-data
+  markerList:
+    markers: []
 --- !u!4 &1408159460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd,
@@ -22055,7 +22079,7 @@ PrefabInstance:
     - target: {fileID: 4422659090696076826, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 4422659090696076826, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -22065,7 +22089,7 @@ PrefabInstance:
     - target: {fileID: 4422659090696076826, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 147.05
       objectReference: {fileID: 0}
     - target: {fileID: 4422659090696076826, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}

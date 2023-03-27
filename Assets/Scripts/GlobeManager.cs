@@ -32,23 +32,23 @@ public class GlobeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        radius = gameObject.transform.localScale.x / 1.75f;
-        TextAsset txtAsset = (TextAsset)Resources.Load(fileName);
-        markerList = JsonUtility.FromJson<MarkerList>(txtAsset.text);
-        //Debug.Log("test");
-        //Debug.Log(markers.markers[0].title);
-        foreach (Marker marker in markerList.markers)
-        {
-            //Get correct position
-            var correctedPos = ConvertLatLong(marker.latitude, marker.longitude, radius) + transform.position;
-            // Get correct orientation
-            var correctedRot = AlignRotation(correctedPos);
-            // Instantiate marker
-            var mapMarker = Instantiate(markerPrefab, correctedPos, correctedRot, transform);
-            var mapPinManager = mapMarker.GetComponent<MapPinManager>();
-            mapPinManager.markerData = marker;
-            Debug.Log(marker.title);
-        }
+        //radius = gameObject.transform.localScale.x / 1.75f;
+        //TextAsset txtAsset = (TextAsset)Resources.Load(fileName);
+        //markerList = JsonUtility.FromJson<MarkerList>(txtAsset.text);
+        ////Debug.Log("test");
+        ////Debug.Log(markers.markers[0].title);
+        //foreach (Marker marker in markerList.markers)
+        //{
+        //    //Get correct position
+        //    var correctedPos = ConvertLatLong(marker.latitude, marker.longitude, radius) + transform.position;
+        //    // Get correct orientation
+        //    var correctedRot = AlignRotation(correctedPos);
+        //    // Instantiate marker
+        //    var mapMarker = Instantiate(markerPrefab, correctedPos, correctedRot, transform);
+        //    var mapPinManager = mapMarker.GetComponent<MapPinManager>();
+        //    mapPinManager.markerData = marker;
+        //    Debug.Log(marker.title);
+        //}
     }
 
     // Update is called once per frame

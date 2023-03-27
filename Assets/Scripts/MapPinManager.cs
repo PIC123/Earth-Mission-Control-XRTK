@@ -7,14 +7,15 @@ using Microsoft.Maps.Unity;
 public class MapPinManager : MonoBehaviour
 {
     public GlobeManager.Marker markerData;
-    private MapRenderer mapRenderer;
+    public MapRenderer mapRenderer;
     private SpinFree spinner;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        mapRenderer = gameObject.GetComponentInParent<GlobeManager>().mapRenderer;
-        spinner = gameObject.GetComponentInParent<SpinFree>();
+        mapRenderer = GameObject.FindGameObjectsWithTag("MapTable")[0].GetComponent<MapRenderer>();
+        //spinner = gameObject.GetComponentInParent<SpinFree>();
     }
 
     // Update is called once per frame
