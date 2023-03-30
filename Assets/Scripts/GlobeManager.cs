@@ -26,12 +26,15 @@ public class GlobeManager : MonoBehaviour
     public GameObject markerPrefab;
     public string fileName;
     public MapRenderer mapRenderer;
+    public Material[] globeMaterials;
     private MarkerList markerList;
     private float radius;
+    private Renderer globeMaterialRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
+        globeMaterialRenderer = gameObject.GetComponent<Renderer>();
         //radius = gameObject.transform.localScale.x / 1.75f;
         //TextAsset txtAsset = (TextAsset)Resources.Load(fileName);
         //markerList = JsonUtility.FromJson<MarkerList>(txtAsset.text);
@@ -91,5 +94,10 @@ public class GlobeManager : MonoBehaviour
 
         // return new position
         return new Vector3(xPos, yPos, zPos);
+    }
+
+    public void setGlobeMap(int mapType)
+    {
+        globeMaterialRenderer.material = globeMaterials[mapType];
     }
 }
