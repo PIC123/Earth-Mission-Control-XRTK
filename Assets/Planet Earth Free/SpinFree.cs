@@ -38,4 +38,9 @@ public class SpinFree : MonoBehaviour {
 			}
 		}
 	}
+
+	public void setSpinspeed(int newSpeed)
+    {
+		speed = newSpeed;
+    }
 }

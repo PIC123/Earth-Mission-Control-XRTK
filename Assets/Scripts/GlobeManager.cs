@@ -5,6 +5,7 @@ using UnityEngine;
 using System.IO;
 using Microsoft.Geospatial;
 using Microsoft.Maps.Unity;
+using UnityEngine.Video;
 
 public class GlobeManager : MonoBehaviour
 {
@@ -27,9 +28,11 @@ public class GlobeManager : MonoBehaviour
     public string fileName;
     public MapRenderer mapRenderer;
     public Material[] globeMaterials;
+    public string[] globeAnimationUrls;
     private MarkerList markerList;
     private float radius;
     private Renderer globeMaterialRenderer;
+    private VideoPlayer videoPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -99,5 +102,10 @@ public class GlobeManager : MonoBehaviour
     public void setGlobeMap(int mapType)
     {
         globeMaterialRenderer.material = globeMaterials[mapType];
+    }
+
+    public void setGlobeAnimation(int mapType)
+    {
+        videoPlayer.url = globeAnimationUrls[mapType];
     }
 }
