@@ -69,9 +69,10 @@ public class GlobeManager : MonoBehaviour
     {
         if (ballController.isGrabbed)
         {
-            spinner.setSpinspeed(0);
+            spinner.spin = false;
         } else
         {
+            spinner.spin = true;
             spinner.setSpinspeed(spinSlider.value * 3);
         }
         var fixedScale = (scaleSlider.value * 3) + 1;

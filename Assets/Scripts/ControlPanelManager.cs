@@ -23,7 +23,7 @@ public class ControlPanelManager : MonoBehaviour
         if(newActivePanel != activePanel)
         {
             panels[activePanel].SetActive(false);
-            panels[newActivePanel].SetActive(false);
+            panels[newActivePanel].SetActive(true);
             activePanel = newActivePanel;
         }
     }
