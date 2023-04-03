@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UIElements;
 
 /// <summary>
 /// Spin the object at a specified speed
@@ -39,8 +40,13 @@ public class SpinFree : MonoBehaviour {
 		}
 	}
 
-	public void setSpinspeed(int newSpeed)
+	public void setSpinspeed(float newSpeed)
     {
 		speed = newSpeed;
+    }
+
+	public void toggleSpin()
+    {
+		spin = !spin;
     }
 }

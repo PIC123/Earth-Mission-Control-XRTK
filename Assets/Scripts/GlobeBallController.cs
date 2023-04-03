@@ -8,6 +8,7 @@ public class GlobeBallController : MonoBehaviour
     private Quaternion startRot;
     public bool isGrabbed = false;
     public float angle;
+    public GameObject globe;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,18 +21,24 @@ public class GlobeBallController : MonoBehaviour
     {
         if (isGrabbed)
         {
-            var xdir = transform.position.x - startPos.x > 0 ? -1 : 1;
-            var zdir = transform.position.z - startPos.z > 0 ? -1 : 1;
-            var currx = new Vector3(transform.position.x, 0, 0);
-            var origx = new Vector3(startPos.x, 0, 0);
-            var currz = new Vector3(0, 0, transform.position.z);
-            var origz = new Vector3(0, 0, startPos.z);
-            angle = Quaternion.Angle(gameObject.transform.rotation, startRot);
+            //var xdir = transform.position.x - startPos.x > 0 ? -1 : 1;
+            //var zdir = transform.position.z - startPos.z > 0 ? -1 : 1;
+            //var currx = new Vector3(transform.position.x, 0, 0);
+            //var origx = new Vector3(startPos.x, 0, 0);
+            //var currz = new Vector3(0, 0, transform.position.z);
+            //var origz = new Vector3(0, 0, startPos.z);
+            //angle = Quaternion.Angle(gameObject.transform.rotation, startRot);
+            globe.transform.rotation = gameObject.transform.rotation;
         }
         else
         {
             gameObject.transform.position = startPos;
-            gameObject.transform.rotation = startRot;
+            //gameObject.transform.rotation = startRot;
         }
+    }
+
+    public void toggleGrabbed(bool newState)
+    {
+        isGrabbed = newState;
     }
 }

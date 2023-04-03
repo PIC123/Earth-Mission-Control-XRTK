@@ -6,6 +6,7 @@ using System.IO;
 using Microsoft.Geospatial;
 using Microsoft.Maps.Unity;
 using UnityEngine.Video;
+using UnityEngine.UI;
 
 public class GlobeManager : MonoBehaviour
 {
@@ -33,11 +34,17 @@ public class GlobeManager : MonoBehaviour
     private float radius;
     private Renderer globeMaterialRenderer;
     private VideoPlayer videoPlayer;
+    private SpinFree spinner;
+    public Slider spinSlider;
+    public Slider scaleSlider;
+    public GlobeBallController ballController;
 
     // Start is called before the first frame update
     void Start()
     {
         globeMaterialRenderer = gameObject.GetComponent<Renderer>();
+        videoPlayer = gameObject.GetComponent<VideoPlayer>();
+        spinner = gameObject.GetComponent<SpinFree>();
         //radius = gameObject.transform.localScale.x / 1.75f;
         //TextAsset txtAsset = (TextAsset)Resources.Load(fileName);
         //markerList = JsonUtility.FromJson<MarkerList>(txtAsset.text);
@@ -60,7 +67,15 @@ public class GlobeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (ballController.isGrabbed)
+        {
+            spinner.setSpinspeed(0);
+        } else
+        {
+            spinner.setSpinspeed(spinSlider.value * 3);
+        }
+        var fixedScale = (scaleSlider.value * 3) + 1;
+        gameObject.transform.localScale = new Vector3(fixedScale, fixedScale, fixedScale);
     }
 
     //void Read(string path)
