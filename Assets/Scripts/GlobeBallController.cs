@@ -12,7 +12,7 @@ public class GlobeBallController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = gameObject.transform.position;
+        startPos = gameObject.transform.localPosition;
         startRot = gameObject.transform.rotation;
     }
 
@@ -32,7 +32,7 @@ public class GlobeBallController : MonoBehaviour
         }
         else
         {
-            gameObject.transform.position = startPos;
+            gameObject.transform.localPosition = startPos;
             //gameObject.transform.rotation = startRot;
         }
     }

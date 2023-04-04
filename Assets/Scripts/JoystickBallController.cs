@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JoystickBallController : MonoBehaviour
 {
-    private Vector3 startPos;
+    public Vector3 startPos;
     private Quaternion startRot;
     public bool isGrabbed = false;
     public float xdist;
@@ -35,7 +35,7 @@ public class JoystickBallController : MonoBehaviour
             angle = Quaternion.Angle(gameObject.transform.rotation, startRot);
         } else
         {
-            gameObject.transform.position = startPos;
+            gameObject.transform.localPosition = new Vector3(0,0,0);
             gameObject.transform.rotation = startRot;
         }
     }
@@ -43,5 +43,10 @@ public class JoystickBallController : MonoBehaviour
     public void SetGrabState(bool state)
     {
         isGrabbed = state;
+    }
+
+    public void SetStartPos()
+    {
+        startPos = gameObject.transform.position;
     }
 }
