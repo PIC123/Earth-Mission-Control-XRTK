@@ -10718,6 +10718,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllowSwitchOff: 0
+--- !u!1 &695683190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 695683191}
+  m_Layer: 0
+  m_Name: Map Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &695683191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695683190}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.76, y: 5.43, z: -1.55}
+  m_LocalScale: {x: 1, y: 0.51, z: 0.94}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1400842444}
+  m_Father: {fileID: 1635907010}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &695920844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429508, guid: 9c74caa742791864f9c678287121e6c9,
@@ -18166,7 +18198,7 @@ Transform:
   - {fileID: 1020226346}
   - {fileID: 1957595178}
   m_Father: {fileID: 1635907010}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1116025675
 GameObject:
@@ -23381,7 +23413,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365569989}
-  m_LocalRotation: {x: 0.7070875, y: 0.005220324, z: -0.005220324, w: 0.7070875}
+  m_LocalRotation: {x: 0.7070875, y: 0.0052202945, z: -0.0052202945, w: 0.7070875}
   m_LocalPosition: {x: 0, y: 0, z: -0.361}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.0002}
   m_ConstrainProportionsScale: 0
@@ -23391,10 +23423,10 @@ RectTransform:
   - {fileID: 516901112}
   m_Father: {fileID: 898139119}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: -89.06, z: -89.906}
+  m_LocalEulerAnglesHint: {x: 90, y: -89.154, z: -90}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50.249, y: -49.696}
+  m_AnchoredPosition: {x: 50.249, y: -49.662}
   m_SizeDelta: {x: 240, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1365569991
@@ -23463,8 +23495,20 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
-  m_IsOn: 1
+      m_Calls:
+      - m_Target: {fileID: 1635907011}
+        m_TargetAssemblyTypeName: HyperwallManager, Assembly-CSharp
+        m_MethodName: toggleMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_IsOn: 0
 --- !u!114 &1365569993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24448,14 +24492,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400842443}
-  m_LocalRotation: {x: -0.45024368, y: -0.5525305, z: -0.5445011, w: 0.4421643}
-  m_LocalPosition: {x: 4.04, y: 9.28, z: -4.74}
-  m_LocalScale: {x: 7.0275354, y: 6.141454, z: 4.88872}
+  m_LocalRotation: {x: -0.45024365, y: -0.55253047, z: -0.5445011, w: 0.44216424}
+  m_LocalPosition: {x: 3.26, y: 7.25, z: -2.83}
+  m_LocalScale: {x: 7.598928, y: 6.141455, z: 8.933014}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 680746949}
-  m_Father: {fileID: 1635907010}
-  m_RootOrder: 2
+  m_Father: {fileID: 695683191}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90.923, y: 2.5, z: -95.69501}
 --- !u!114 &1400842445
 MonoBehaviour:
@@ -28176,7 +28220,7 @@ PrefabInstance:
     - target: {fileID: 4422659090696076826, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 110
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4422659090696076826, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -28186,7 +28230,7 @@ PrefabInstance:
     - target: {fileID: 4422659090696076826, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 147.05
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4422659090696076826, guid: fd28f23af44f73f4a95e33435872ad15,
         type: 3}
@@ -28292,6 +28336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1635907010}
+  - component: {fileID: 1635907011}
   m_Layer: 0
   m_Name: HyperWall
   m_TagString: Untagged
@@ -28313,11 +28358,26 @@ Transform:
   m_Children:
   - {fileID: 1118066270}
   - {fileID: 1453005229}
-  - {fileID: 1400842444}
   - {fileID: 1113817013}
+  - {fileID: 695683191}
   m_Father: {fileID: 336622364}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 8.55, z: 0}
+--- !u!114 &1635907011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635907009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551abecfb97ed39438ee9d8a272d2138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMapOpen: 0
+  contents: {fileID: 1113817012}
+  mapContainer: {fileID: 695683190}
 --- !u!4 &1645425501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 442488, guid: ec78ebca7517fb745a45a931cb06d2bd,
