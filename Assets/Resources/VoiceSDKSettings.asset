@@ -20,15 +20,24 @@ MonoBehaviour:
     isPrivate: 1
     createdAt: 2023-04-24T11:58:13-0700
     trainingStatus: 1
-    lastTrainDuration: 32
-    lastTrainedAt: 2023-04-24T12:30:56-0700
-    nextTrainAt: 2023-04-24T12:30:24-0700
+    lastTrainDuration: 59
+    lastTrainedAt: 2023-04-24T17:41:30-0700
+    nextTrainAt: 2023-04-24T17:40:31-0700
     intents:
     - id: 3452616185066995
       name: go_to_display
       entities:
       - name: display:display
         id: 774296967740817
+    - id: 197288849775674
+      name: load_data
+      entities:
+      - name: data_type:data_type
+        id: 999656094352704
+      - name: display:display
+        id: 774296967740817
+      - name: wit$location:location
+        id: 164380636257385
     - id: 221623187176970
       name: load_map
       entities:
@@ -42,6 +51,18 @@ MonoBehaviour:
       - name: zoom_level:zoom_level
         id: 6115666935176092
     entities:
+    - name: data_type
+      id: 886984439060919
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: data_type
+        id: 999656094352704
+      keywords:
+      - keyword: average rainfall
+        synonyms:
+        - average rainfall
     - name: display
       id: 1214075552834066
       lookups:
@@ -59,6 +80,9 @@ MonoBehaviour:
         synonyms:
         - hyperwall
         - wall
+      - keyword: hyperwall display 2
+        synonyms:
+        - hyperwall display 2
       - keyword: map table
         synonyms:
         - map table
@@ -124,7 +148,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-  _configurationId: 
+  _configurationId: 2c373736-1ffb-4e51-aa1f-9469eb87cdda
   timeoutMS: 10000
   endpointConfiguration:
     uriScheme: 
@@ -135,7 +159,7 @@ MonoBehaviour:
     message: 
     dictation: 
   isDemoOnly: 0
-  useConduit: 1
+  useConduit: 0
   _manifestLocalPath: ConduitManifest-663e5f3d-49f4-4979-a468-224370982795.json
   excludedAssemblies: []
   relaxedResolution: 0

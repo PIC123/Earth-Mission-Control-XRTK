@@ -46,4 +46,14 @@ public class MapManager : MonoBehaviour
 
         mapInfoText.text = $"Latitude: {mapRenderer.Center.LatitudeInDegrees} \n Longitude: {mapRenderer.Center.LongitudeInDegrees} \n Zoom Level: {mapRenderer.ZoomLevel}";
     }
+
+    public void setZoom(float zoomLevel)
+    {
+        mapRenderer.ZoomLevel = zoomLevel;
+    }
+
+    public void setLatLong(float targetLat, float targetLong)
+    {
+        mapRenderer.Center = new LatLon(targetLat, targetLong);
+    }
 }
