@@ -17,17 +17,17 @@ public class HyperwallManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isMapOpen)
-        {
-            contents.SetActive(false);
-            mapContainer.transform.localPosition = new Vector3(0, 0, 4.6f);
-            mapContainer.transform.localScale = new Vector3(1, 1, 1.97f);
-        } else
-        {
-            mapContainer.transform.localPosition = new Vector3(0.76f, 5.43f, -1.55f);
-            mapContainer.transform.localScale = new Vector3(1, 0.51f, 0.94f);
-            contents.SetActive(true);
-        }
+        //if (isMapOpen)
+        //{
+        //    contents.SetActive(false);
+        //    mapContainer.transform.localPosition = new Vector3(0, 0, 4.6f);
+        //    mapContainer.transform.localScale = new Vector3(1, 1, 1.97f);
+        //} else
+        //{
+        //    mapContainer.transform.localPosition = new Vector3(0.76f, 5.43f, -1.55f);
+        //    mapContainer.transform.localScale = new Vector3(1, 0.51f, 0.94f);
+        //    contents.SetActive(true);
+        //}
     }
 
     public void toggleMap()

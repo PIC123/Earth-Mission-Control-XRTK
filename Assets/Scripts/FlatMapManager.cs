@@ -25,8 +25,6 @@ public class FlatMapManager : MonoBehaviour
             mapPin.Location = new LatLon(marker.latitude, marker.longitude);
             var mapPinManager = mapPin.GetComponent<MapPinManager>();
             mapPinManager.markerData = marker;
-
-            //mapPinLayer.MapPins.Add(mapPin);
         }
     }
 
