@@ -14,7 +14,7 @@ public class ChatGPTAssistant : Singleton<ChatGPTAssistant>
     private TextMeshProUGUI captionText;
 
     [SerializeField]
-    private int maxCharacters = 140;
+    private int maxCharacters = 280;
 
     [SerializeField]
     [TextArea(5, 10)]

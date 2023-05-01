@@ -20,9 +20,9 @@ MonoBehaviour:
     isPrivate: 1
     createdAt: 2023-04-24T11:58:13-0700
     trainingStatus: 1
-    lastTrainDuration: 59
-    lastTrainedAt: 2023-04-24T17:41:30-0700
-    nextTrainAt: 2023-04-24T17:40:31-0700
+    lastTrainDuration: 46
+    lastTrainedAt: 2023-04-29T16:50:46-0700
+    nextTrainAt: 2023-04-29T16:50:00-0700
     intents:
     - id: 3452616185066995
       name: go_to_display
@@ -45,6 +45,13 @@ MonoBehaviour:
         id: 774296967740817
       - name: wit$location:location
         id: 164380636257385
+    - id: 1966758070363649
+      name: question
+      entities:
+      - name: data_type:data_type
+        id: 999656094352704
+      - name: wit$location:location
+        id: 164380636257385
     - id: 1651279141977122
       name: set_zoom
       entities:
@@ -63,6 +70,18 @@ MonoBehaviour:
       - keyword: average rainfall
         synonyms:
         - average rainfall
+      - keyword: average temperate
+        synonyms:
+        - average temperate
+      - keyword: average temperature
+        synonyms:
+        - average temperature
+      - keyword: flood risk
+        synonyms:
+        - flood risk
+      - keyword: rainforest
+        synonyms:
+        - rainforest
     - name: display
       id: 1214075552834066
       lookups:
@@ -80,10 +99,13 @@ MonoBehaviour:
         synonyms:
         - hyperwall
         - wall
+      - keyword: hyperwall display
+        synonyms:
+        - hyperwall display
       - keyword: hyperwall display 2
         synonyms:
         - hyperwall display 2
-      - keyword: map table
+      - keyword: table
         synonyms:
         - map table
         - table
@@ -106,6 +128,9 @@ MonoBehaviour:
       - keyword: 15
         synonyms:
         - 15
+      - keyword: 20
+        synonyms:
+        - 20
     traits: []
     voices:
     - name: Charlie
@@ -142,6 +167,96 @@ MonoBehaviour:
     - name: Vampire
       locale: en_US
       gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: wit/Cael
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: wit/Cam
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: wit/Carl
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: wit/Cody
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: wit/Connor
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: wit/Railey
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: wit/Remi
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: wit/Rubie
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: wit/Colin
+      locale: en_CA
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: wit/Rosie
+      locale: en_CA
+      gender: female
       styles:
       - default
       - soft

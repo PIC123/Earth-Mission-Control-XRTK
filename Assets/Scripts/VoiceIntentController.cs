@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public enum Displays
 {
@@ -36,6 +37,10 @@ public class VoiceIntentController : MonoBehaviour
 
     private bool appVoiceActive;
 
+    public GameObject gazeTarget;
+
+    public Material[] dataMats;
+
     private void Awake()
     {
         fullTranscriptText.text = partialTranscriptText.text = string.Empty;
@@ -43,6 +48,7 @@ public class VoiceIntentController : MonoBehaviour
         appVoiceExperience.TranscriptionEvents.OnFullTranscription.AddListener((transcript) =>
         {
             fullTranscriptText.text = transcript;
+            //ChatGPTClient.Instance.AskQuestion(transcript);
         });
 
         appVoiceExperience.TranscriptionEvents.OnPartialTranscription.AddListener((transcript) =>
@@ -60,6 +66,23 @@ public class VoiceIntentController : MonoBehaviour
         {
             appVoiceActive = false;
             Debug.Log("OnRequestCompleted Deactivated");
+        });
+
+        appVoiceExperience.VoiceEvents.OnResponse.AddListener((response) =>
+        {
+            var respObj = response.AsObject;
+            Debug.Log($"response: {respObj}");
+            var intents = respObj["intents"];
+            var respText = respObj["text"];
+            Debug.Log($"intents: {intents}");
+            if(intents.Count == 0 && respObj["text"].ToString() != "" || intents[0]["name"] == "question")
+            {
+                Debug.Log($"Asking ChatGPT a question: {respObj["text"]}");
+                ChatGPTClient.Instance.AskQuestion(respObj["text"]);
+            } else
+            {
+                Debug.Log($"Processing Action: {respObj["text"]}");
+            }
         });
     }
 
@@ -122,6 +145,13 @@ public class VoiceIntentController : MonoBehaviour
     {
         DisplayValues("LoadData: ", info);
         responseText.text = $"LoadData: {info[0]}";
+        if (gazeTarget)
+        {
+            if(gazeTarget.transform.parent.parent.name == "HyperWall")
+            {
+                gazeTarget.GetComponent<Renderer>().material = dataMats[Random.Range(0,dataMats.Length -1)];
+            }
+        }
     }
 
     public void ChangeZoom(String[] info)
@@ -138,5 +168,10 @@ public class VoiceIntentController : MonoBehaviour
     {
         DisplayValues("Help: ", info);
         responseText.text = $"Help: {info[0]}";
+    }
+
+    public void SetGazaeObject(GameObject targetObj)
+    {
+        gazeTarget = targetObj;
     }
 }

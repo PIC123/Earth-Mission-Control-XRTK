@@ -2,6 +2,7 @@ using DilmerGames.Core.Singletons;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -10,23 +11,31 @@ public class ChatGPTClient : Singleton<ChatGPTClient>
     [SerializeField]
     private ChatGTPSettings chatGTPSettings;
 
+    private ChatGPTChatMessage[] messages;
+
+    [TextArea(3, 10)]
+    [SerializeField]
+    private string startingPrompt;
+
+    public void Start()
+    {
+        messages = new[] { new ChatGPTChatMessage { Role = "system", Content = startingPrompt } };
+    }
+
     public IEnumerator Ask(string prompt, Action<ChatGPTResponse> callBack)
     {
         var url = chatGTPSettings.debug ? $"{chatGTPSettings.apiURL}?debug=true" : chatGTPSettings.apiURL;
+
+        messages.Append(new ChatGPTChatMessage { Role = "user", Content = prompt });
+
+        Debug.Log($"Messages so far: {messages}");
 
         using(UnityWebRequest request = new UnityWebRequest(url, "POST"))
         {
             var requestParams = JsonConvert.SerializeObject(new ChatGPTRequest
             {
                 Model = chatGTPSettings.apiModel,
-                Messages = new ChatGPTChatMessage[]
-                   {
-                       new ChatGPTChatMessage
-                       {
-                            Role = "user",
-                            Content = prompt
-                       }
-                   }
+                Messages = messages
             });
 
             byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(requestParams);
@@ -70,10 +79,13 @@ public class ChatGPTClient : Singleton<ChatGPTClient>
     {
         StartCoroutine(Ask(gptPrompt, (response) =>
         {
-            Debug.Log(response);
+            Debug.Log($"ChatGPT choices: {response.Choices}");
+            var msg = response.Choices.FirstOrDefault().Message;
+            messages.Append(msg);
+            Debug.Log($"ChatGPT response: {msg.Content}");
 
             // Step 3 - (incoming request) - send explanations to a TTS provider
-            //ChatGPTAssistant.Instance.ChatGPTAISpeak(response.Explanation);
+            ChatGPTAssistant.Instance.ChatGPTAISpeak(msg.Content);
         }));
     }
 }
