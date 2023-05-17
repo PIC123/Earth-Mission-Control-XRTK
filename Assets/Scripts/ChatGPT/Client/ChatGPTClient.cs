@@ -67,7 +67,6 @@ public class ChatGPTClient : Singleton<ChatGPTClient>
             {
                 string responseInfo = request.downloadHandler.text;
                 var response = JsonConvert.DeserializeObject<ChatGPTResponse>(responseInfo);
-                    //.Populate();
 
                 response.ResponseTotalTime = (DateTime.Now - requestStartDateTime).TotalMilliseconds;
 
@@ -85,7 +84,6 @@ public class ChatGPTClient : Singleton<ChatGPTClient>
             messages.Add(msg);
             Debug.Log($"ChatGPT response: {msg.Content}");
 
-            // Step 3 - (incoming request) - send explanations to a TTS provider
             ChatGPTAssistant.Instance.ChatGPTAISpeak(msg.Content);
         }));
     }

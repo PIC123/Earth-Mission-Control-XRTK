@@ -79,21 +79,7 @@ public class ChatGPTAssistant : Singleton<ChatGPTAssistant>
         {
             speaker.SpeakQueued(cap);
         }
-        //linesProcessed = 0;
-
-        //while (true)
-        //{
-        //    if (!speaker.IsSpeaking && !speaker.IsLoading)
-        //    {
-        //        Debug.Log($"Speak[{linesProcessed}] : {captions[linesProcessed]}");
-        //        speaker.Speak(captions[linesProcessed]);
-        //    }
-
-        //    yield return new WaitWhile(() => speaker.IsSpeaking);
-
-        //    if (linesProcessed >= captions.Count) break;
-        //}
-
+        
         yield return null;
     }
 
