@@ -97,15 +97,7 @@ public class VoiceIntentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Keyboard.current.spaceKey.wasPressedThisFrame && !appVoiceActive)
-        //{
-        //    appVoiceExperience.Activate();
-        //}
 
-        //if (Input.GetButton("trigger"))
-        //{
-        //    Debug.Log("trigger pressed");
-        //}
     }
 
     public void ActivateVoice()
