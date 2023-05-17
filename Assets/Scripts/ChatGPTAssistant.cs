@@ -31,6 +31,8 @@ public class ChatGPTAssistant : Singleton<ChatGPTAssistant>
     [SerializeField]
     private Animator characterAnimator;
 
+    private bool firstTime = true;
+
     public void SetCharacterAssistantLoadAnimation(bool playAnim)
     {
         characterAnimator.SetBool("PlayAnim_Anim", playAnim);
@@ -63,7 +65,7 @@ public class ChatGPTAssistant : Singleton<ChatGPTAssistant>
         });
     }
 
-    private void Start() => speaker.Speak(welcomeMessage);
+    //private void Start() => speaker.Speak(welcomeMessage);
 
     public void ChatGPTAISpeak(string text) => StartCoroutine(SpeakInChunks(text));
 
@@ -73,20 +75,24 @@ public class ChatGPTAssistant : Singleton<ChatGPTAssistant>
         List<string> captions = SplitIntoMultipleCaptions(text);
         captions.Insert(0, transcribingInProgressMessage);
 
-        linesProcessed = 0;
-
-        while (true)
+        foreach(var cap in captions)
         {
-            if (!speaker.IsSpeaking && !speaker.IsLoading)
-            {
-                Debug.Log($"Speak[{linesProcessed}] : {captions[linesProcessed]}");
-                speaker.Speak(captions[linesProcessed]);
-            }
-
-            yield return new WaitWhile(() => speaker.IsSpeaking);
-
-            if (linesProcessed >= captions.Count) break;
+            speaker.SpeakQueued(cap);
         }
+        //linesProcessed = 0;
+
+        //while (true)
+        //{
+        //    if (!speaker.IsSpeaking && !speaker.IsLoading)
+        //    {
+        //        Debug.Log($"Speak[{linesProcessed}] : {captions[linesProcessed]}");
+        //        speaker.Speak(captions[linesProcessed]);
+        //    }
+
+        //    yield return new WaitWhile(() => speaker.IsSpeaking);
+
+        //    if (linesProcessed >= captions.Count) break;
+        //}
 
         yield return null;
     }
@@ -115,5 +121,14 @@ public class ChatGPTAssistant : Singleton<ChatGPTAssistant>
         }
 
         return lines;
+    }
+
+    public void SpeakWelcome()
+    {
+        if (firstTime)
+        {
+            speaker.Speak(welcomeMessage);
+            firstTime = false;
+        }
     }
 }

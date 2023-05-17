@@ -39,7 +39,9 @@ public class VoiceIntentController : MonoBehaviour
 
     public GameObject gazeTarget;
 
-    public Material[] dataMats;
+    public Material[] tempMats;
+    public Material[] floodMats;
+    public Material[] rainMats;
 
     private void Awake()
     {
@@ -75,7 +77,7 @@ public class VoiceIntentController : MonoBehaviour
             var intents = respObj["intents"];
             var respText = respObj["text"];
             Debug.Log($"intents: {intents}");
-            if(intents.Count == 0 && respObj["text"].ToString() != "" || intents[0]["name"] == "question")
+            if ((intents.Count == 0 && respObj["text"].ToString() != "") || (string)intents[0]["name"] == ("question"))
             {
                 Debug.Log($"Asking ChatGPT a question: {respObj["text"]}");
                 ChatGPTClient.Instance.AskQuestion(respObj["text"]);
@@ -149,7 +151,21 @@ public class VoiceIntentController : MonoBehaviour
         {
             if(gazeTarget.transform.parent.parent.name == "HyperWall")
             {
-                gazeTarget.GetComponent<Renderer>().material = dataMats[Random.Range(0,dataMats.Length -1)];
+                switch (info[0])
+                {
+                    case "flood":
+                        gazeTarget.GetComponent<Renderer>().material = floodMats[Random.Range(0, floodMats.Length - 1)];
+                        break;
+                    case "temperature":
+                        gazeTarget.GetComponent<Renderer>().material = tempMats[Random.Range(0, tempMats.Length - 1)];
+                        break;
+                    case "rainfall":
+                        gazeTarget.GetComponent<Renderer>().material = rainMats[Random.Range(0, rainMats.Length - 1)];
+                        break;
+                    default:
+                        gazeTarget.GetComponent<Renderer>().material = floodMats[Random.Range(0, floodMats.Length - 1)];
+                        break;
+                }
             }
         }
     }
