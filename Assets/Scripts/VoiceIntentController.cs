@@ -77,7 +77,7 @@ public class VoiceIntentController : MonoBehaviour
             var intents = respObj["intents"];
             var respText = respObj["text"];
             Debug.Log($"intents: {intents}");
-            if ((intents.Count == 0 && respObj["text"].ToString() != "") || (string)intents[0]["name"] == ("question"))
+            if ((string)intents[0]["name"] == ("question")) //((intents.Count == 0 && respObj["text"].ToString() != "") || (string)intents[0]["name"] == ("question"))
             {
                 Debug.Log($"Asking ChatGPT a question: {respObj["text"]}");
                 ChatGPTClient.Instance.AskQuestion(respObj["text"]);
