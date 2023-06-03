@@ -1,20 +1,28 @@
-# Earth-Mission-Control-XRTK
-Earth Mission Control with EarthBot 
+<img align="right" width="150" src="docs\images\emc-logo.png"/>
 
-This is the repo for the Earth Mission Control project with EarthBot integration. 
+# Earth-Mission-Control
 
-## Files
+An immersive, multi-user VR/AR data visualization platform, aimed at enabling climate scientists to more effectively communicate their data stories to policy makers to drive more informed policy decisions.
+
+##
+
+## Description of Files
 
 The relevant files for EarthBot are:
  - Assets/Scripts/ChatGPTAssistant.cs
     - The main interface for the ChatGPT game object that connects with the text-to-speech module from the voice SDK and sends text to it in chunks because the Voice SDK has a limit to how much text it can process at once. 
+    - Adapted from DilmerVR chatbot implementation.
  - Assets/Scripts/VoiceIntentController.cs
     - Connects the speech understanding to the system and allows actions to be triggered when key words or intents are recognized. 
     - It specifies which actions the system can take and connects them to event listeners
+    - Adapted from DilmerVR chatbot implementation.
  - Assets/Scripts/ChatGPT/ChatGPTSettings.cs
     - A helper file used to store ChatGPT settings
+    - Adapted from DilmerVR chatbot implementation.
  - Assets/Scripts/ChatGPT/ChatGPTClient.cs
     - The main interface with the ChatGPT REST API. Includes logic for message history storage and sending the ChatGPT response to the ChatGPTAssistant script.
+    - Adapted from DilmerVR chatbot implementation.
+
 
 ## Set-Up/Installation
 
@@ -26,3 +34,5 @@ To test out the application in the Unity Editor, you will need to set up a few t
 - Next clone the repo or download it as a zip file and extract it. In Unity Hub, add the project and open it. 
 - Once the project is open, load the TextNatueEnv Scene from the Assets/Scenes folder. 
 - Ensure that the build settings are set to Android and if the Oculus software is running locally and the headset is connected via Link, you can just press the play button in the Editor and the application will load on the headset. 
+
+## Troubleshooting
