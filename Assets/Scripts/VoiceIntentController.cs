@@ -49,7 +49,7 @@ public class VoiceIntentController : MonoBehaviour
 
         appVoiceExperience.TranscriptionEvents.OnFullTranscription.AddListener((transcript) =>
         {
-            fullTranscriptText.text = transcript;
+            //fullTranscriptText.text = transcript;
             //ChatGPTClient.Instance.AskQuestion(transcript);
         });
 
