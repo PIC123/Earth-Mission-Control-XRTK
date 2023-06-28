@@ -60,6 +60,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Bing Maps API Key
-[Aa]ssets/[Rr]esources/MapSessionConfig.txt
+[Aa]ssets/[Rr]esources/MapSessionConfig.*
+[Aa]ssets/[Rr]esources/ChatGPTSettings.*
 UnityCrashHandler64.exe
 UnityPlayer.dll
