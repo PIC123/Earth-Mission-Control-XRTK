@@ -33,6 +33,10 @@ To test out the application in the Unity Editor, you will need to set up a few t
 - Ensure your headset is properly set up for development, following [these instructions](https://developer.oculus.com/documentation/unity/unity-env-device-setup/).
 - Next clone the repo or download it as a zip file and extract it. In Unity Hub, add the project and open it. 
 - Once the project is open, load the TextNatueEnv Scene from the Assets/Scenes folder. 
+- Add the MapSessionConfig and ChatGPTSettings files you have into the Resources folder.
 - Ensure that the build settings are set to Android and if the Oculus software is running locally and the headset is connected via Link, you can just press the play button in the Editor and the application will load on the headset. 
 
 ## Troubleshooting
+
+- If the scene loads without the environment fully loaded, open the package manager and re-import the asset called Nature Starter Kit 2. If it's not listed under the package manager, you can get it from the asset store as a free asset. 
+- If the EarthBot doesn't respond to questions or if there is a console error that says there are ChatGPT settings missing even though they are in the Resources folder, select the ChatGPTClient object in the Hierarchy and set the ChatGPTSettings property to the file in the Resources folder. 
