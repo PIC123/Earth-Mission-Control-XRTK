@@ -23,6 +23,9 @@ public class GlobeManager : MonoBehaviour
         public float longitude;
         public string title;
         public string description;
+        public float co2;
+        public float ch4;
+        public float n2o;
     }
 
     public GameObject markerPrefab;
@@ -34,6 +37,7 @@ public class GlobeManager : MonoBehaviour
     private float radius;
     private Renderer globeMaterialRenderer;
     private VideoPlayer videoPlayer;
+    public Marker selectedMarker;
     //private SpinFree spinner;
     //public Slider spinSlider;
     //public Slider scaleSlider;
@@ -44,24 +48,27 @@ public class GlobeManager : MonoBehaviour
     {
         globeMaterialRenderer = gameObject.GetComponent<Renderer>();
         videoPlayer = gameObject.GetComponent<VideoPlayer>();
+        radius = gameObject.transform.localScale.x * 0.5f;
         //spinner = gameObject.GetComponent<SpinFree>();
         //radius = gameObject.transform.localScale.x / 1.75f;
-        //TextAsset txtAsset = (TextAsset)Resources.Load(fileName);
-        //markerList = JsonUtility.FromJson<MarkerList>(txtAsset.text);
-        ////Debug.Log("test");
-        ////Debug.Log(markers.markers[0].title);
-        //foreach (Marker marker in markerList.markers)
-        //{
-        //    //Get correct position
-        //    var correctedPos = ConvertLatLong(marker.latitude, marker.longitude, radius) + transform.position;
-        //    // Get correct orientation
-        //    var correctedRot = AlignRotation(correctedPos);
-        //    // Instantiate marker
-        //    var mapMarker = Instantiate(markerPrefab, correctedPos, correctedRot, transform);
-        //    var mapPinManager = mapMarker.GetComponent<MapPinManager>();
-        //    mapPinManager.markerData = marker;
-        //    Debug.Log(marker.title);
-        //}
+        TextAsset txtAsset = (TextAsset)Resources.Load(fileName);
+        markerList = JsonUtility.FromJson<MarkerList>(txtAsset.text);
+        Debug.Log("test");
+        Debug.Log(markerList.markers[0].title);
+        foreach (Marker marker in markerList.markers)
+        {
+            //Get correct position
+            var correctedPos = ConvertLatLong(marker.latitude, marker.longitude, radius) + transform.position;
+            Debug.Log(correctedPos);
+            // Get correct orientation
+            var correctedRot = AlignRotation(correctedPos);
+            // Instantiate marker
+            var mapMarker = Instantiate(markerPrefab, correctedPos, correctedRot, transform);
+            var mapPinManager = mapMarker.GetComponent<MapPinManager>();
+            mapPinManager.setupPin(marker);
+            Debug.Log(marker.title);
+        }
+        selectedMarker = markerList.markers[0];
     }
 
     // Update is called once per frame

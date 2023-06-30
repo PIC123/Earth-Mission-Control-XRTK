@@ -3,51 +3,148 @@
         "longitude": -71,
         "latitude": 42,
         "title": "Boston",
+        "co2": 29358,
+        "ch4": 14,
+        "n2o": 16,
         "description": "Boston is the capital and most populous city of the Commonwealth of Massachusetts in the United States. The city proper covers 48.3 square miles (124.6 km2) with an estimated population of 685,094 in 2016, making it also the most populous city in New England. Boston is the seat of Suffolk County as well, although the county government was disbanded on July 1, 1999. The city is the economic and cultural anchor of a substantially larger metropolitan area known as Greater Boston, a metropolitan statistical area (MSA) home to a census-estimated 4.8 million people in 2016 and ranking as the tenth-largest such area in the country. The city also hosts several world-class universities, including Boston University, Boston College, Northeastern University, and Tufts University."
     },{
         "title": "Los Angeles",
         "latitude": 34.0522,
         "longitude": -118.2437,
+        "co2": 29358,
+        "ch4": 14,
+        "n2o": 16,
         "description": "LA is an interesting place"
     },{
         "title": "New York",
         "latitude": 40.7128,
         "longitude": -74.0059,
+        "co2": 33358,
+        "ch4": 15,
+        "n2o": 17,
         "description": "NY is an interesting place"
     },{
         "title": "San Francisco",
         "latitude": 37.7749,
         "longitude": -122.4194,
+        "co2": 34358,
+        "ch4": 16,
+        "n2o": 18,
         "description": "SF is an interesting place"
     },{
         "title": "Seattle",
         "latitude": 47.6062,
         "longitude": -122.3321,
+        "co2": 25358,
+        "ch4": 13,
+        "n2o": 15,
         "description": "Seattle is an interesting place"
     },{
         "title": "Washington DC",
         "latitude": 38.9072,
         "longitude": -77.0369,
+        "co2": 28576,
+        "ch4": 14,
+        "n2o": 19,
         "description": "DC is an interesting place"
-    },{
+    },
+    {
         "title": "London",
         "latitude": 51.5074,
         "longitude": -0.1278,
+        "co2": 23420,
+        "ch4": 10,
+        "n2o": 12,
         "description": "London is an interesting place"
-    },{
+    },
+    {
         "title": "Paris",
         "latitude": 48.8566,
         "longitude": 2.3522,
+        "co2": 32189,
+        "ch4": 18,
+        "n2o": 22,
         "description": "Paris is an interesting place"
-    },{
+    },
+    {
         "title": "Tokyo",
         "latitude": 35.6895,
         "longitude": 139.6917,
+        "co2": 25934,
+        "ch4": 16,
+        "n2o": 13,
         "description": "Tokyo is an interesting place"
-    },{
+    },
+    {
         "title": "Sydney",
         "latitude": -33.8688,
         "longitude": 151.2093,
+        "co2": 23871,
+        "ch4": 11,
+        "n2o": 21,
         "description": "Sydney is an interesting place"
+    },
+    {
+        "title": "Melbourne",
+        "latitude": -37.8136,
+        "longitude": 144.9631,
+        "co2": 27118,
+        "ch4": 15,
+        "n2o": 15,
+        "description": "Melbourne is an interesting place"
+    },
+    {
+        "title": "Toronto",
+        "latitude": 43.6532,
+        "longitude": -79.3832,
+        "co2": 29209,
+        "ch4": 12,
+        "n2o": 11,
+        "description": "Toronto is an interesting place"
+    },
+    {
+        "title": "Vancouver",
+        "latitude": 49.2827,
+        "longitude": -123.1207,
+        "co2": 24230,
+        "ch4": 9,
+        "n2o": 18,
+        "description": "Vancouver is an interesting place"
+    },
+    {
+        "title": "Montreal",
+        "latitude": 45.5017,
+        "longitude": -73.5673,
+        "co2": 27651,
+        "ch4": 17,
+        "n2o": 20,
+        "description": "Montreal is an interesting place"
+    },
+    {
+        "title": "Mexico City",
+        "latitude": 19.4326,
+        "longitude": -99.1332,
+        "co2": 31528,
+        "ch4": 8,
+        "n2o": 10,
+        "description": "Mexico City is an interesting place"
+    },
+    {
+        "title": "Sao Paulo",
+        "latitude": -23.5505,
+        "longitude": -46.6333,
+        "co2": 32650,
+        "ch4": 20,
+        "n2o": 17,
+        "description": "Sao Paulo is an interesting place"
+    },
+    {
+        "title": "Rio de Janeiro",
+        "latitude": -22.9068,
+        "longitude": -43.1729,
+        "co2": 23750,
+        "ch4": 14,
+        "n2o": 14,
+        "description": "Rio de Janeiro is an interesting place"
     }]
 }

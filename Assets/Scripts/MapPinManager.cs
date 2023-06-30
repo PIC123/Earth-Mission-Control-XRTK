@@ -11,6 +11,9 @@ public class MapPinManager : MonoBehaviour
     public MapRenderer mapRenderer;
     public Text overviewText;
     private SpinFree spinner;
+    public Material goodMat;
+    public Material badMat;
+
 
 
     // Start is called before the first frame update
@@ -24,6 +27,15 @@ public class MapPinManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void setupPin(GlobeManager.Marker marker)
+    {
+        transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+        if (marker.co2 > 31000f)
+        {
+            GetComponent<Renderer>().material = badMat;
+        }
     }
 
     public void setLatLong()
