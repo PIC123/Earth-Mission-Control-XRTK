@@ -4,6 +4,7 @@ using UnityEngine;
 using Microsoft.Geospatial;
 using Microsoft.Maps.Unity;
 using UnityEngine.UI;
+using TMPro;
 
 public class MapManager : MonoBehaviour
 {
@@ -12,11 +13,23 @@ public class MapManager : MonoBehaviour
     public float translationSpeedOffset = 1;
     public float rotationSpeedOffset = 1;
     public float zoomSpeedOffset = 1;
-    public Text mapInfoText;
+    //public GameObject generalInfoPanel;
+    //public GameObject dataPanel;
     public GameObject water;
     public float waterLevel;
     public Slider waterSlider;
     public float initialWaterHeight;
+    public GlobeManager globeManager;
+
+    public TextMeshProUGUI locationText;
+    public TextMeshProUGUI latText;
+    public TextMeshProUGUI longText;
+    public TextMeshProUGUI zoomText;
+
+    public TextMeshProUGUI co2Text;
+    public TextMeshProUGUI n2oText;
+    public TextMeshProUGUI ch4Text;
+    public TextMeshProUGUI h2oText;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +57,8 @@ public class MapManager : MonoBehaviour
             );
         }
 
-        mapInfoText.text = $"Latitude: {mapRenderer.Center.LatitudeInDegrees} \n Longitude: {mapRenderer.Center.LongitudeInDegrees} \n Zoom Level: {mapRenderer.ZoomLevel}";
+        //mapInfoText.text = $"Latitude: {mapRenderer.Center.LatitudeInDegrees} \n Longitude: {mapRenderer.Center.LongitudeInDegrees} \n Zoom Level: {mapRenderer.ZoomLevel}";
+        setText();
     }
 
     public void setZoom(float zoomLevel)
@@ -55,5 +69,70 @@ public class MapManager : MonoBehaviour
     public void setLatLong(float targetLat, float targetLong)
     {
         mapRenderer.Center = new LatLon(targetLat, targetLong);
+    }
+
+    public void setText()
+    {
+        var markerData = globeManager.selectedMarker;
+
+        // Update Basic Info Panel
+        locationText.text = markerData.title;
+        latText.text = markerData.latitude.ToString();
+        longText.text = markerData.longitude.ToString();
+        zoomText.text = mapRenderer.ZoomLevel.ToString();
+
+
+        // Update Data Panel
+        co2Text.text = markerData.co2.ToString();
+        if(markerData.co2 > 31000f)
+        {
+            co2Text.color = Color.red;
+        } else if(markerData.co2 >28000f)
+        {
+            co2Text.color = Color.yellow;
+        } else if(markerData.co2 <=28000f)
+        {
+            co2Text.color = Color.green;
+        }
+        n2oText.text = markerData.n2o.ToString();
+        if (markerData.n2o > 17f)
+        {
+            n2oText.color = Color.red;
+        }
+        else if (markerData.n2o > 15f)
+        {
+            n2oText.color = Color.yellow;
+        }
+        else if (markerData.n2o <= 15f)
+        {
+            n2oText.color = Color.green;
+        }
+        ch4Text.text = markerData.ch4.ToString();
+        if (markerData.ch4 > 17f)
+        {
+            ch4Text.color = Color.red;
+        }
+        else if (markerData.ch4 > 15f)
+        {
+            ch4Text.color = Color.yellow;
+        }
+        else if (markerData.ch4 <= 15f)
+        {
+            ch4Text.color = Color.green;
+        }
+        h2oText.text = markerData.h2o.ToString();
+        if (markerData.ch4 > 17f)
+        {
+            h2oText.color = Color.red;
+        }
+        else if (markerData.ch4 > 15f)
+        {
+            h2oText.color = Color.yellow;
+        }
+        else if (markerData.ch4 <= 15f)
+        {
+            h2oText.color = Color.green;
+        }
+        //mapInfoText.text = $"Location: {markerData.title}\n Latitude: {markerData.latitude} Longitude: {markerData.longitude}\n Zoom Level: {mapRenderer.ZoomLevel}";
     }
 }

@@ -9,9 +9,13 @@ public class EnvironmentManager : MonoBehaviour
     public GameObject water;
     public float waterLevel;
     public Slider waterSlider;
+
+    private GameObject[] tooltips;
+    private bool showtooltips = true;
+
     void Start()
     {
-        
+        tooltips = GameObject.FindGameObjectsWithTag("Tooltip");
     }
 
     // Update is called once per frame
@@ -25,6 +29,16 @@ public class EnvironmentManager : MonoBehaviour
         else
         {
             water.SetActive(false);
+        }
+    }
+
+    public void toggleTooltips()
+    {
+        showtooltips = !showtooltips;
+        foreach (GameObject tooltip in tooltips)
+        {
+            tooltip.SetActive(showtooltips);
+
         }
     }
 }

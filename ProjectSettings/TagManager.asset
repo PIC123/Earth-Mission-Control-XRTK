@@ -10,6 +10,7 @@ TagManager:
   - lb_perchTarget
   - MapTable
   - Planet
+  - Tooltip
   layers:
   - Default
   - TransparentFX

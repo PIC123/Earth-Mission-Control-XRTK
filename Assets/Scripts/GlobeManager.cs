@@ -26,6 +26,7 @@ public class GlobeManager : MonoBehaviour
         public float co2;
         public float ch4;
         public float n2o;
+        public float h2o;
     }
 
     public GameObject markerPrefab;
@@ -38,6 +39,7 @@ public class GlobeManager : MonoBehaviour
     private Renderer globeMaterialRenderer;
     private VideoPlayer videoPlayer;
     public Marker selectedMarker;
+    public MapManager mapManager;
     //private SpinFree spinner;
     //public Slider spinSlider;
     //public Slider scaleSlider;
@@ -48,7 +50,7 @@ public class GlobeManager : MonoBehaviour
     {
         globeMaterialRenderer = gameObject.GetComponent<Renderer>();
         videoPlayer = gameObject.GetComponent<VideoPlayer>();
-        radius = gameObject.transform.localScale.x * 0.5f;
+        radius = gameObject.transform.localScale.x * 0.55f;
         //spinner = gameObject.GetComponent<SpinFree>();
         //radius = gameObject.transform.localScale.x / 1.75f;
         TextAsset txtAsset = (TextAsset)Resources.Load(fileName);
@@ -136,5 +138,10 @@ public class GlobeManager : MonoBehaviour
     {
         var fixedScale = (globescale * 3) + 1;
         gameObject.transform.localScale = new Vector3(fixedScale, fixedScale, fixedScale);
+    }
+
+    public void setMapText()
+    {
+        mapManager.setText();
     }
 }

@@ -6,6 +6,7 @@
         "co2": 29358,
         "ch4": 14,
         "n2o": 16,
+        "h2o": 10760,
         "description": "Boston is the capital and most populous city of the Commonwealth of Massachusetts in the United States. The city proper covers 48.3 square miles (124.6 km2) with an estimated population of 685,094 in 2016, making it also the most populous city in New England. Boston is the seat of Suffolk County as well, although the county government was disbanded on July 1, 1999. The city is the economic and cultural anchor of a substantially larger metropolitan area known as Greater Boston, a metropolitan statistical area (MSA) home to a census-estimated 4.8 million people in 2016 and ranking as the tenth-largest such area in the country. The city also hosts several world-class universities, including Boston University, Boston College, Northeastern University, and Tufts University."
     },{
         "title": "Los Angeles",
@@ -14,6 +15,7 @@
         "co2": 29358,
         "ch4": 14,
         "n2o": 16,
+        "h2o": 11234,
         "description": "LA is an interesting place"
     },{
         "title": "New York",
@@ -22,6 +24,7 @@
         "co2": 33358,
         "ch4": 15,
         "n2o": 17,
+        "h2o": 11987,
         "description": "NY is an interesting place"
     },{
         "title": "San Francisco",
@@ -30,6 +33,7 @@
         "co2": 34358,
         "ch4": 16,
         "n2o": 18,
+        "h2o": 10456,
         "description": "SF is an interesting place"
     },{
         "title": "Seattle",
@@ -38,6 +42,7 @@
         "co2": 25358,
         "ch4": 13,
         "n2o": 15,
+        "h2o": 12043,
         "description": "Seattle is an interesting place"
     },{
         "title": "Washington DC",
@@ -46,6 +51,7 @@
         "co2": 28576,
         "ch4": 14,
         "n2o": 19,
+        "h2o": 11560,
         "description": "DC is an interesting place"
     },
     {
@@ -55,6 +61,7 @@
         "co2": 23420,
         "ch4": 10,
         "n2o": 12,
+        "h2o": 11078,
         "description": "London is an interesting place"
     },
     {
@@ -64,6 +71,7 @@
         "co2": 32189,
         "ch4": 18,
         "n2o": 22,
+        "h2o": 12134,
         "description": "Paris is an interesting place"
     },
     {
@@ -73,6 +81,7 @@
         "co2": 25934,
         "ch4": 16,
         "n2o": 13,
+        "h2o": 12304,
         "description": "Tokyo is an interesting place"
     },
     {
@@ -82,6 +91,7 @@
         "co2": 23871,
         "ch4": 11,
         "n2o": 21,
+        "h2o": 11345,
         "description": "Sydney is an interesting place"
     },
     {
@@ -91,6 +101,7 @@
         "co2": 27118,
         "ch4": 15,
         "n2o": 15,
+        "h2o": 10823,
         "description": "Melbourne is an interesting place"
     },
     {
@@ -100,6 +111,7 @@
         "co2": 29209,
         "ch4": 12,
         "n2o": 11,
+        "h2o": 11789,
         "description": "Toronto is an interesting place"
     },
     {
@@ -109,6 +121,7 @@
         "co2": 24230,
         "ch4": 9,
         "n2o": 18,
+        "h2o": 11597,
         "description": "Vancouver is an interesting place"
     },
     {
@@ -118,6 +131,7 @@
         "co2": 27651,
         "ch4": 17,
         "n2o": 20,
+        "h2o": 11204,
         "description": "Montreal is an interesting place"
     },
     {
@@ -127,6 +141,7 @@
         "co2": 31528,
         "ch4": 8,
         "n2o": 10,
+        "h2o": 12000,
         "description": "Mexico City is an interesting place"
     },
     {
@@ -136,6 +151,7 @@
         "co2": 32650,
         "ch4": 20,
         "n2o": 17,
+        "h2o": 11830,
         "description": "Sao Paulo is an interesting place"
     },
     {
@@ -145,6 +161,7 @@
         "co2": 23750,
         "ch4": 14,
         "n2o": 14,
+        "h2o": 11647,
         "description": "Rio de Janeiro is an interesting place"
     }]
 }

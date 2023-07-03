@@ -13,6 +13,7 @@ public class MapPinManager : MonoBehaviour
     private SpinFree spinner;
     public Material goodMat;
     public Material badMat;
+    private GlobeManager globeManager;
 
 
 
@@ -20,7 +21,8 @@ public class MapPinManager : MonoBehaviour
     void Start()
     {
         mapRenderer = GameObject.FindGameObjectsWithTag("MapTable")[0].GetComponent<MapRenderer>();
-        //spinner = gameObject.GetComponentInParent<SpinFree>();
+        spinner = gameObject.GetComponentInParent<SpinFree>();
+        globeManager = gameObject.GetComponentInParent<GlobeManager>();
     }
 
     // Update is called once per frame
@@ -31,21 +33,22 @@ public class MapPinManager : MonoBehaviour
 
     public void setupPin(GlobeManager.Marker marker)
     {
-        transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+        transform.localScale = new Vector3(0.045f, 0.045f, 0.045f);
         if (marker.co2 > 31000f)
         {
             GetComponent<Renderer>().material = badMat;
+            transform.localScale = new Vector3(0.065f, 0.065f, 0.065f);
         }
+        markerData = marker;
     }
 
     public void setLatLong()
     {
         mapRenderer.Center = new LatLon(markerData.latitude, markerData.longitude);
-    }
+        Debug.Log($"going to {markerData.title}");
+        globeManager.selectedMarker = markerData;
+        globeManager.setMapText();
 
-    public void setMapInfo()
-    {
-        overviewText.text = $"Location: {markerData.title} \n Latitude: {markerData.latitude} \n Longitude: {markerData.longitude} \n Description: {markerData.description}";
     }
 
     public void toggleSpin(bool spinning)

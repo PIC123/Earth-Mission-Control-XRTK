@@ -121,6 +121,7 @@ MonoBehaviour:
     co2: 0
     ch4: 0
     n2o: 0
+    h2o: 0
   mapRenderer: {fileID: 0}
   overviewText: {fileID: 0}
   goodMat: {fileID: 2100000, guid: 6bcf3c63b4aeb2143968eca1ab29779d, type: 2}
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 396672740857959593, guid: 87a8442163079bd48a0918812c1ba685, type: 3}
+  - {fileID: 9024714604198966105}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -157,15 +158,8 @@ MonoBehaviour:
   m_AllowGazeAssistance: 0
   m_FirstHoverEntered:
     m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1299694630428811266, guid: 87a8442163079bd48a0918812c1ba685,
-          type: 3}
+      - m_Target: {fileID: 3175819932502518621}
         m_TargetAssemblyTypeName: MapPinManager, Assembly-CSharp
         m_MethodName: toggleSpin
         m_Mode: 6
@@ -176,12 +170,11 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
-  m_HoverExited:
+        m_CallState: 2
+  m_LastHoverExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1299694630428811266, guid: 87a8442163079bd48a0918812c1ba685,
-          type: 3}
+      - m_Target: {fileID: 3175819932502518621}
         m_TargetAssemblyTypeName: MapPinManager, Assembly-CSharp
         m_MethodName: toggleSpin
         m_Mode: 6
@@ -192,7 +185,13 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 0
+        m_CallState: 2
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -201,7 +200,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3175819932502518621}
+        m_TargetAssemblyTypeName: MapPinManager, Assembly-CSharp
+        m_MethodName: setLatLong
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -321,8 +332,7 @@ MonoBehaviour:
   m_ValueUpdated:
     m_PersistentCalls:
       m_Calls: []
-  m_TransformToScale: {fileID: 2421908312681028027, guid: 87a8442163079bd48a0918812c1ba685,
-    type: 3}
+  m_TransformToScale: {fileID: 5485537611324463388}
 --- !u!114 &7050863222447134492
 MonoBehaviour:
   m_ObjectHideFlags: 0

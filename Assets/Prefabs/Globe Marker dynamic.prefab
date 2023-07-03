@@ -412,7 +412,13 @@ MonoBehaviour:
     longitude: 0
     title: 
     description: 
+    co2: 0
+    ch4: 0
+    n2o: 0
   mapRenderer: {fileID: 0}
+  overviewText: {fileID: 0}
+  goodMat: {fileID: 0}
+  badMat: {fileID: 0}
 --- !u!136 &396672740857959593
 CapsuleCollider:
   m_ObjectHideFlags: 0
