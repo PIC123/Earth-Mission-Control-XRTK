@@ -20,6 +20,7 @@ public class MapManager : MonoBehaviour
     public Slider waterSlider;
     public float initialWaterHeight;
     public GlobeManager globeManager;
+    public ParticleSystem particles;
 
     public TextMeshProUGUI locationText;
     public TextMeshProUGUI latText;
@@ -30,10 +31,13 @@ public class MapManager : MonoBehaviour
     public TextMeshProUGUI n2oText;
     public TextMeshProUGUI ch4Text;
     public TextMeshProUGUI h2oText;
+
+    private GlobeManager.Marker currMarker;
     // Start is called before the first frame update
     void Start()
     {
         initialWaterHeight = water.transform.position.y;
+        currMarker = globeManager.selectedMarker;
     }
 
     // Update is called once per frame
@@ -58,7 +62,12 @@ public class MapManager : MonoBehaviour
         }
 
         //mapInfoText.text = $"Latitude: {mapRenderer.Center.LatitudeInDegrees} \n Longitude: {mapRenderer.Center.LongitudeInDegrees} \n Zoom Level: {mapRenderer.ZoomLevel}";
-        setText();
+        if(currMarker.title != globeManager.selectedMarker.title)
+        {
+            Debug.Log("New location!");
+            setText();
+            setParticleLevel();
+        }
     }
 
     public void setZoom(float zoomLevel)
@@ -134,5 +143,14 @@ public class MapManager : MonoBehaviour
             h2oText.color = Color.green;
         }
         //mapInfoText.text = $"Location: {markerData.title}\n Latitude: {markerData.latitude} Longitude: {markerData.longitude}\n Zoom Level: {mapRenderer.ZoomLevel}";
+    }
+
+    public void setParticleLevel()
+    {
+        var particleEmission = particles.emission;
+        var newROT = ((globeManager.selectedMarker.co2 - 23000f) / (32000f - 24000f)) * 500;
+        particleEmission.rateOverTime = newROT;
+        Debug.Log($"NewROT: {newROT}");
+        //particles..emission.rateOverTime = (globeManager.selectedMarker.co2 - 28000f)/
     }
 }

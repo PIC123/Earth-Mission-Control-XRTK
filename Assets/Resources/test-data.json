@@ -1,13 +1,13 @@
 {
     "markers": [{
-        "longitude": -71,
-        "latitude": 42,
-        "title": "Boston",
+        "longitude": -71.0872,
+        "latitude": 42.3605,
+        "title": "Cambridge",
         "co2": 29358,
         "ch4": 14,
         "n2o": 16,
         "h2o": 10760,
-        "description": "Boston is the capital and most populous city of the Commonwealth of Massachusetts in the United States. The city proper covers 48.3 square miles (124.6 km2) with an estimated population of 685,094 in 2016, making it also the most populous city in New England. Boston is the seat of Suffolk County as well, although the county government was disbanded on July 1, 1999. The city is the economic and cultural anchor of a substantially larger metropolitan area known as Greater Boston, a metropolitan statistical area (MSA) home to a census-estimated 4.8 million people in 2016 and ranking as the tenth-largest such area in the country. The city also hosts several world-class universities, including Boston University, Boston College, Northeastern University, and Tufts University."
+        "description": "Cambridge is an interesting place"
     },{
         "title": "Los Angeles",
         "latitude": 34.0522,

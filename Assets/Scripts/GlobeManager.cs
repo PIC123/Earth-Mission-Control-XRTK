@@ -71,6 +71,7 @@ public class GlobeManager : MonoBehaviour
             Debug.Log(marker.title);
         }
         selectedMarker = markerList.markers[0];
+        mapManager.setLatLong(selectedMarker.latitude, selectedMarker.longitude);
     }
 
     // Update is called once per frame
@@ -138,10 +139,5 @@ public class GlobeManager : MonoBehaviour
     {
         var fixedScale = (globescale * 3) + 1;
         gameObject.transform.localScale = new Vector3(fixedScale, fixedScale, fixedScale);
-    }
-
-    public void setMapText()
-    {
-        mapManager.setText();
     }
 }
