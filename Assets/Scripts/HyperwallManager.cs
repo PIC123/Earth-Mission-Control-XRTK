@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HyperwallManager : MonoBehaviour
 {
-    public bool isMapOpen = false;
-    public GameObject contents;
-    public GameObject mapContainer;
+    
+
+    //public bool isMapOpen = false;
+    //public GameObject contents;
+    //public GameObject mapContainer;
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +33,8 @@ public class HyperwallManager : MonoBehaviour
         //}
     }
 
-    public void toggleMap()
-    {
-        isMapOpen = !isMapOpen;
-    }
+    //public void toggleMap()
+    //{
+    //    isMapOpen = !isMapOpen;
+    //}
 }

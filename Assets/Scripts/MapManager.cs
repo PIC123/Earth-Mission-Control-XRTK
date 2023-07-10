@@ -64,7 +64,7 @@ public class MapManager : MonoBehaviour
         //mapInfoText.text = $"Latitude: {mapRenderer.Center.LatitudeInDegrees} \n Longitude: {mapRenderer.Center.LongitudeInDegrees} \n Zoom Level: {mapRenderer.ZoomLevel}";
         if(currMarker.title != globeManager.selectedMarker.title)
         {
-            Debug.Log("New location!");
+            //Debug.Log("New location!");
             setText();
             setParticleLevel();
         }
@@ -150,7 +150,7 @@ public class MapManager : MonoBehaviour
         var particleEmission = particles.emission;
         var newROT = ((globeManager.selectedMarker.co2 - 23000f) / (32000f - 24000f)) * 500;
         particleEmission.rateOverTime = newROT;
-        Debug.Log($"NewROT: {newROT}");
+        //Debug.Log($"NewROT: {newROT}");
         //particles..emission.rateOverTime = (globeManager.selectedMarker.co2 - 28000f)/
     }
 }
